@@ -24,7 +24,8 @@ namespace WeatherORama.Displays
 
             stringBuilder.Append("Forecast: ");
 
-		    if (_currentPressure > _lastPressure) {
+		    if (_currentPressure > _lastPressure) 
+            {
 			    stringBuilder.Append("Improving weather on the way!");
 		    }
             else if (Math.Abs(_currentPressure - _lastPressure) < 0.000001f)

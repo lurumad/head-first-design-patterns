@@ -7,27 +7,27 @@ namespace WeatherORama
         private float _temperature;
         private float _humidity;
         private float _pressure;
-        private readonly List<IObserver> _observers;
+        public List<IObserver> Observers { get; private set; }
 
         public WeatherData()
         {
-            _observers = new List<IObserver>();
+            Observers = new List<IObserver>();
         }
     
         public void RegisterObserver(IObserver observer)
         {
-            _observers.Add(observer);
+            Observers.Add(observer);
         }
 
         public void RemoveObserver(IObserver observer)
         {
-            if (_observers.Contains(observer))
-                _observers.Remove(observer);
+            if (Observers.Contains(observer))
+                Observers.Remove(observer);
         }
 
         public void NotifyObservers()
         {
-            _observers.ForEach(observer => 
+            Observers.ForEach(observer => 
                 observer.Update(_temperature, _humidity, _pressure));
         }
 
