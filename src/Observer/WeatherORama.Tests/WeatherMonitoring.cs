@@ -75,7 +75,7 @@ namespace WeatherORama.Tests
         }
 
         [Test]
-        public void WhenCreateCurrentConditionsDisplayAndCallSetMeasurementsMethodExpectDisplayMethodReturnValue()
+        public void WhenCreateCurrentConditionsDisplayAndCallSetMeasurementsMethodExpectDisplayMethodReturnCurrentConditionsMessage()
         {
             var weatherData = new WeatherData();
             var currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
