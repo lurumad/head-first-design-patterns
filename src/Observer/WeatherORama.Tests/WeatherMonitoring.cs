@@ -84,5 +84,39 @@ namespace WeatherORama.Tests
 
             Assert.AreEqual("Current conditions: 80 F degrees and 50 % humidity", currentConditionsDisplay.Display());
         }
+
+        [Test]
+        public void WhenCreateStatisticsDisplayAndCallSetMeasurementsMethodOnceExpectDisplayMethodReturnStatisticsMessageAvg80Max80Min80()
+        {
+            var weatherData = new WeatherData();
+            var statisticsDisplay = new StatisticsDisplay(weatherData);
+
+            weatherData.SetMeasurements(80, 50, 80);
+
+            Assert.AreEqual("Avg/Max/Min temperature = 80 / 80 / 80", statisticsDisplay.Display());
+        }
+
+        [Test]
+        public void WhenCreateStatisticsDisplayAndCallSetMeasurementsMethodTwiceExpectDisplayMethodReturnStatisticsMessageAvg40Max80Min60()
+        {
+            var weatherData = new WeatherData();
+            var statisticsDisplay = new StatisticsDisplay(weatherData);
+
+            weatherData.SetMeasurements(80, 50, 80);
+            weatherData.SetMeasurements(60, 50, 80);
+
+            Assert.AreEqual("Avg/Max/Min temperature = 70 / 80 / 60", statisticsDisplay.Display());
+        }
+
+        [Test]
+        public void WhenCreateHeatIndexDisplayAndCallSetMeasurementsMethodExpectDisplayMethodReturnHeatIndexMessage()
+        {
+            var weatherData = new WeatherData();
+            var heatIndexDisplay = new HeatIndexDisplay(weatherData);
+
+            weatherData.SetMeasurements(80, 50, 80);
+
+            Assert.AreEqual("Heat index is: 81,07396", heatIndexDisplay.Display());
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WeatherORama
 {
-    public interface IDiplayElement
+    public interface IDisplayElement
     {
         string Display();
     }

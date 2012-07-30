@@ -41,7 +41,8 @@
   <ItemGroup>
     <Compile Include="Displays\CurrentConditionsDisplay.cs" />
     <Compile Include="Displays\ForecastDisplay.cs" />
-    <Compile Include="IDiplayElement.cs" />
+    <Compile Include="Displays\HeatIndexDisplay.cs" />
+    <Compile Include="IDisplayElement.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Displays\StatisticsDisplay.cs" />

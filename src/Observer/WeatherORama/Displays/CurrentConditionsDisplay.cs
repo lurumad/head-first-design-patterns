@@ -2,19 +2,19 @@
 
 namespace WeatherORama.Displays
 {
-    public class CurrentConditionsDisplay : IDiplayElement, IObserver
+    public class CurrentConditionsDisplay : IDisplayElement, IObserver
     {
         private float _temperature;
         private float _humidity;
-        private ISubject _weatherData;
+        private ISubject _subject;
 
-        public CurrentConditionsDisplay(ISubject weatherData)
+        public CurrentConditionsDisplay(ISubject subject)
         {
-            if (weatherData == null) 
-                throw new ArgumentNullException("weatherData");
+            if (subject == null) 
+                throw new ArgumentNullException("subject");
 
-            _weatherData = weatherData;
-            weatherData.RegisterObserver(this);
+            _subject = subject;
+            _subject.RegisterObserver(this);
         }
 
         public string Display()

@@ -3,19 +3,19 @@ using System.Text;
 
 namespace WeatherORama.Displays
 {
-    public class ForecastDisplay : IDiplayElement, IObserver
+    public class ForecastDisplay : IDisplayElement, IObserver
     {
         private float _lastPressure;
         private float _currentPressure = 29.92F;
-        private ISubject _weatherData;
+        private ISubject _subject;
 
-        public ForecastDisplay(ISubject weatherData)
+        public ForecastDisplay(ISubject subject)
         {
-            if (weatherData == null) 
-                throw new ArgumentNullException("weatherData");
+            if (subject == null) 
+                throw new ArgumentNullException("subject");
 
-            _weatherData = weatherData;
-            weatherData.RegisterObserver(this);
+            _subject = subject;
+            _subject.RegisterObserver(this);
         }
 
         public string Display()
