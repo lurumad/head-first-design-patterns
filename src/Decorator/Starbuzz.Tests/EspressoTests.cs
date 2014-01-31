@@ -29,10 +29,10 @@ namespace Starbuzz.Tests
         [Test]
         public void Cost_WithMocha_ReturnTwoDollarAndNineteenCents()
         {
-            var espresso = new Espresso();
-            var mocha = new Mocha(espresso);
+            Beverage espresso = new Espresso();
+            espresso = new Mocha(espresso);
 
-            var cost = mocha.Cost();
+            var cost = espresso.Cost();
 
             cost.Should().Be(2.19m);
         }

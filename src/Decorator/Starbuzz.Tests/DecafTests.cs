@@ -29,10 +29,10 @@ namespace Starbuzz.Tests
         [Test]
         public void Cost_WithMocha_ReturnOneDollarAndTwentyFiveCents()
         {
-            var decaf = new Decaf();
-            var mocha = new Mocha(decaf);
+            Beverage decaf = new Decaf();
+            decaf = new Mocha(decaf);
 
-            var cost = mocha.Cost();
+            var cost = decaf.Cost();
 
             cost.Should().Be(1.25m);
         }
