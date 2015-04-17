@@ -1,4 +1,8 @@
-head-first-design-patterns
+Head First Design Patterns
 ==========================
 
-Head First Design Patterns in C#
+Head First Design Patterns from Java to C#. For the moment only available:
+
+* Strategy
+* Observer
+* Decorator
